@@ -33,8 +33,9 @@ type Config struct {
 	Pyroscope struct {
 		Addr string `yaml:"addr"`
 	} `yaml:"pyroscope"`
-	KlinePeriod string `yaml:"klinePeriod"`
-	Exchange    struct {
+	KlinePeriod   string `yaml:"klinePeriod"`
+	AnalyzeAmount int    `yaml:"analyzeAmount"`
+	Exchange      struct {
 		Binance struct {
 			ApiKey    string `yaml:"apiKey"`
 			ApiSecret string `yaml:"apiSecret"`
