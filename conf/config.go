@@ -1,7 +1,6 @@
 package conf
 
 import (
-	"google.golang.org/genproto/googleapis/type/decimal"
 	"sync"
 )
 
@@ -36,9 +35,9 @@ type Config struct {
 	Pyroscope struct {
 		Addr string `yaml:"addr"`
 	} `yaml:"pyroscope"`
-	KlinePeriod   string          `yaml:"klinePeriod"`
-	AnalyzeAmount int             `yaml:"analyzeAmount"`
-	StopLoss      decimal.Decimal `yaml:"stopLoss"`
+	KlinePeriod   string `yaml:"klinePeriod"`
+	AnalyzeAmount int    `yaml:"analyzeAmount"`
+	StopLoss      int    `yaml:"stopLoss"`
 	Exchange      struct {
 		Binance struct {
 			ApiKey    string `yaml:"apiKey"`
