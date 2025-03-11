@@ -49,7 +49,7 @@ type Config struct {
 				Url string `yaml:"url"`
 			} `yaml:"copyFutures"`
 		} `yaml:"binance"`
-	} `yaml:"exchange"`
+	} `yaml:"datahub"`
 	Feishu struct {
 		AppId     string            `yaml:"appId"`
 		AppSecret string            `yaml:"appSecret"`

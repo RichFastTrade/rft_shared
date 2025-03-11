@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package exchange.v1;
+package datahub.v1;
 
-option go_package = "github.com/RichFastTrade/rft_shared/api/exchange/v1;v1";
+option go_package = "github.com/RichFastTrade/rft_shared/api/datahub/v1;v1";
 
 import "google/protobuf/empty.proto";
 
-service Exchange {
+service Datahub {
   // 获取所有交易对
   rpc GetSymbols(google.protobuf.Empty) returns (SymbolsReply);
   // 获取指定交易对的K线数据
