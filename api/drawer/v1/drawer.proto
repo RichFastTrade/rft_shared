@@ -12,6 +12,9 @@ message KlinesRequest {
   string symbol = 1;
   string interval = 2;
   repeated KlineData klines = 3;
+  repeated FractalData fractals = 4;
+  repeated CenterData up_centers = 5;
+  repeated CenterData down_centers = 6;
 }
 
 message KlineData {
@@ -27,6 +30,18 @@ message KlineData {
   optional string macd_dif = 10;
   optional string macd_dea = 11;
   optional string macd = 12;
+}
+
+message FractalData {
+  string type = 1;
+  KlineData current = 2;
+}
+
+message CenterData {
+  FractalData start = 1;
+  FractalData end = 2;
+  string highest = 3;
+  string lowest = 4;
 }
 
 message PictureReply {
