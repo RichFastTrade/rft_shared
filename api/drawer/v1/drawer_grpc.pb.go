@@ -26,7 +26,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type DrawerClient interface {
-	GetZenPic(ctx context.Context, in *KlinesRequest, opts ...grpc.CallOption) (*PictureReply, error)
+	GetZenPic(ctx context.Context, in *ZenRequest, opts ...grpc.CallOption) (*PictureReply, error)
 }
 
 type drawerClient struct {
@@ -37,7 +37,7 @@ func NewDrawerClient(cc grpc.ClientConnInterface) DrawerClient {
 	return &drawerClient{cc}
 }
 
-func (c *drawerClient) GetZenPic(ctx context.Context, in *KlinesRequest, opts ...grpc.CallOption) (*PictureReply, error) {
+func (c *drawerClient) GetZenPic(ctx context.Context, in *ZenRequest, opts ...grpc.CallOption) (*PictureReply, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(PictureReply)
 	err := c.cc.Invoke(ctx, Drawer_GetZenPic_FullMethodName, in, out, cOpts...)
@@ -51,7 +51,7 @@ func (c *drawerClient) GetZenPic(ctx context.Context, in *KlinesRequest, opts ..
 // All implementations must embed UnimplementedDrawerServer
 // for forward compatibility.
 type DrawerServer interface {
-	GetZenPic(context.Context, *KlinesRequest) (*PictureReply, error)
+	GetZenPic(context.Context, *ZenRequest) (*PictureReply, error)
 	mustEmbedUnimplementedDrawerServer()
 }
 
@@ -62,7 +62,7 @@ type DrawerServer interface {
 // pointer dereference when methods are called.
 type UnimplementedDrawerServer struct{}
 
-func (UnimplementedDrawerServer) GetZenPic(context.Context, *KlinesRequest) (*PictureReply, error) {
+func (UnimplementedDrawerServer) GetZenPic(context.Context, *ZenRequest) (*PictureReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetZenPic not implemented")
 }
 func (UnimplementedDrawerServer) mustEmbedUnimplementedDrawerServer() {}
@@ -87,7 +87,7 @@ func RegisterDrawerServer(s grpc.ServiceRegistrar, srv DrawerServer) {
 }
 
 func _Drawer_GetZenPic_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(KlinesRequest)
+	in := new(ZenRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -99,7 +99,7 @@ func _Drawer_GetZenPic_Handler(srv interface{}, ctx context.Context, dec func(in
 		FullMethod: Drawer_GetZenPic_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DrawerServer).GetZenPic(ctx, req.(*KlinesRequest))
+		return srv.(DrawerServer).GetZenPic(ctx, req.(*ZenRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

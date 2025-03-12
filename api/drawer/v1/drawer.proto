@@ -5,10 +5,10 @@ package drawer.v1;
 option go_package = "github.com/RichFastTrade/rft_shared/api/drawer/v1;v1";
 
 service Drawer {
-  rpc GetZenPic(KlinesRequest) returns (PictureReply);
+  rpc GetZenPic(ZenRequest) returns (PictureReply);
 }
 
-message KlinesRequest {
+message ZenRequest {
   string symbol = 1;
   string interval = 2;
   repeated KlineData klines = 3;
