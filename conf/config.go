@@ -42,7 +42,10 @@ type Config struct {
 		Binance struct {
 			ApiKey    string `yaml:"apiKey"`
 			ApiSecret string `yaml:"apiSecret"`
-			Futures   struct {
+			Spot      struct {
+				Url string `yaml:"url"`
+			} `yaml:"spot"`
+			Futures struct {
 				Url string `yaml:"url"`
 			} `yaml:"futures"`
 			CopyFutures struct {
