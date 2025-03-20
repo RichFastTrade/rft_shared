@@ -42,17 +42,33 @@ type Config struct {
 		Binance struct {
 			ApiKey    string `yaml:"apiKey"`
 			ApiSecret string `yaml:"apiSecret"`
-			Spot      struct {
-				Url string `yaml:"url"`
-			} `yaml:"spot"`
-			Futures struct {
+			Futures   struct {
 				Url string `yaml:"url"`
 			} `yaml:"futures"`
 			CopyFutures struct {
 				Url string `yaml:"url"`
 			} `yaml:"copyFutures"`
+			Spot struct {
+				Url string `yaml:"url"`
+			} `yaml:"spot"`
 		} `yaml:"binance"`
-	} `yaml:"datahub"`
+		OKX struct {
+			Futures struct {
+				Url string `yaml:"url"`
+			} `yaml:"futures"`
+			Spot struct {
+				Url string `yaml:"url"`
+			} `yaml:"spot"`
+		} `yaml:"okx"`
+		BitGet struct {
+			Futures struct {
+				Url string `yaml:"url"`
+			} `yaml:"futures"`
+			Spot struct {
+				Url string `yaml:"url"`
+			} `yaml:"spot"`
+		} `yaml:"bitget"`
+	} `yaml:"exchange"`
 	Feishu struct {
 		AppId     string            `yaml:"appId"`
 		AppSecret string            `yaml:"appSecret"`
