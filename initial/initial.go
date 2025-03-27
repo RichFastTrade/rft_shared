@@ -7,10 +7,6 @@ func Init() error {
 	if err := initConfig(); err != nil {
 		return err
 	}
-	// 初始化Pyroscope
-	if err := initPyroscope(); err != nil {
-		return err
-	}
 	// 初始化队列
 	if err := initRabbitMQ(); err != nil {
 		return err

@@ -32,9 +32,6 @@ type Config struct {
 		User     string `yaml:"user"`
 		Password string `yaml:"password"`
 	} `yaml:"rabbitmq"`
-	Pyroscope struct {
-		Addr string `yaml:"addr"`
-	} `yaml:"pyroscope"`
 	KlinePeriod   string `yaml:"klinePeriod"`
 	AnalyzeAmount int    `yaml:"analyzeAmount"`
 	StopLoss      int    `yaml:"stopLoss"`

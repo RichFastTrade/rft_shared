@@ -15,7 +15,7 @@ var once sync.Once
 func Get() *kratoszap.Logger {
 	once.Do(func() {
 		config := zap.NewProductionConfig()
-		config.EncoderConfig.EncodeTime = nil
+		config.EncoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
 		config.EncoderConfig.EncodeLevel = func(level zapcore.Level, enc zapcore.PrimitiveArrayEncoder) {
 			enc.AppendString(strings.ToUpper(level.String()))
 		}
