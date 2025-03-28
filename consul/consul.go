@@ -2,6 +2,7 @@ package consul
 
 import (
 	"github.com/hashicorp/consul/api"
+	"os"
 	"sync"
 )
 
@@ -10,8 +11,12 @@ var once sync.Once
 
 func Get() *api.Client {
 	once.Do(func() {
+		addr := os.Getenv("CONSUL_ADDRESS")
+		if addr == "" {
+			addr = "consul:8500"
+		}
 		consulClient, err := api.NewClient(&api.Config{
-			Address: "consul.richfast.trade:8500",
+			Address: addr,
 		})
 		if err != nil {
 			panic(err)
