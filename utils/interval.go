@@ -49,14 +49,14 @@ var IntervalMap = map[string]Interval{
 		"1M",
 		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%2 == 0 },
 	},
-	"3h": {
-		60 * 3,
-		"3h",
-		"3 hours",
-		"0 */3 * * *",
-		"45d",
-		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%3 == 0 },
-	},
+	//"3h": {
+	//	60 * 3,
+	//	"3h",
+	//	"3 hours",
+	//	"0 */3 * * *",
+	//	"45d",
+	//	func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%3 == 0 },
+	//},
 	"4h": {
 		60 * 4,
 		"4h",
