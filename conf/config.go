@@ -32,10 +32,11 @@ type Config struct {
 		User     string `yaml:"user"`
 		Password string `yaml:"password"`
 	} `yaml:"rabbitmq"`
-	KlinePeriod   string `yaml:"klinePeriod"`
-	AnalyzeAmount int    `yaml:"analyzeAmount"`
-	StopLoss      int    `yaml:"stopLoss"`
-	Exchange      struct {
+	KlinePeriod    string `yaml:"klinePeriod"`
+	AnalyzeAmount  int    `yaml:"analyzeAmount"`
+	QuoteVolume24h int    `yaml:"quoteVolume24h"`
+	StopLoss       int    `yaml:"stopLoss"`
+	Exchange       struct {
 		Binance struct {
 			ApiKey    string `yaml:"apiKey"`
 			ApiSecret string `yaml:"apiSecret"`
