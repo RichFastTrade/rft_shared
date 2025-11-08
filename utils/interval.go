@@ -46,7 +46,7 @@ var IntervalMap = map[string]Interval{
 		"2h",
 		"2 hours",
 		"0 */2 * * *",
-		"1M",
+		"30d",
 		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%2 == 0 },
 	},
 	//"3h": {
@@ -62,7 +62,7 @@ var IntervalMap = map[string]Interval{
 		"4h",
 		"4 hours",
 		"0 */4 * * *",
-		"2M",
+		"60d",
 		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%4 == 0 },
 	},
 	"6h": {
@@ -70,7 +70,7 @@ var IntervalMap = map[string]Interval{
 		"6h",
 		"6 hours",
 		"0 */6 * * *",
-		"3M",
+		"90d",
 		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%6 == 0 },
 	},
 	"8h": {
@@ -78,7 +78,7 @@ var IntervalMap = map[string]Interval{
 		"8h",
 		"8 hours",
 		"0 */8 * * *",
-		"4M",
+		"120d",
 		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%8 == 0 },
 	},
 	"12h": {
@@ -86,7 +86,7 @@ var IntervalMap = map[string]Interval{
 		"12h",
 		"12 hours",
 		"0 */12 * * *",
-		"6M",
+		"180d",
 		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%12 == 0 },
 	},
 	"1d": {
@@ -94,7 +94,7 @@ var IntervalMap = map[string]Interval{
 		"1d",
 		"1 day",
 		"0 0 * * *",
-		"1y",
+		"360d",
 		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%24 == 0 },
 	},
 	"2d": {
@@ -102,7 +102,7 @@ var IntervalMap = map[string]Interval{
 		"2d",
 		"2 days",
 		"0 0 * * *",
-		"2y",
+		"720d",
 		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%24 == 0 && d%2 == 0 },
 	},
 	"3d": {
@@ -110,7 +110,7 @@ var IntervalMap = map[string]Interval{
 		"3d",
 		"3 days",
 		"0 0 * * *",
-		"3y",
+		"1080d",
 		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%24 == 0 && d%3 == 0 },
 	},
 	"5d": {
@@ -118,7 +118,7 @@ var IntervalMap = map[string]Interval{
 		"5d",
 		"5 days",
 		"0 0 * * *",
-		"5y",
+		"1800d",
 		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%24 == 0 && d%5 == 0 },
 	},
 	"1w": {
@@ -126,17 +126,17 @@ var IntervalMap = map[string]Interval{
 		"1w",
 		"1 week",
 		"0 0 * * *",
-		"7y",
+		"2520d",
 		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%24 == 0 && d%7 == 0 },
 	},
-	"1M": {
-		60 * 24 * 28,
-		"1M",
-		"1 month",
-		"0 0 * * *",
-		"30y",
-		func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%24 == 0 && dd == 0 },
-	},
+	//"1M": {
+	//	60 * 24 * 28,
+	//	"1M",
+	//	"1 month",
+	//	"0 0 * * *",
+	//	"10800d",
+	//	func(m int64, h int64, d int64, dd int64) bool { return m%60 == 0 && h%24 == 0 && dd == 0 },
+	//},
 }
 
 type Interval struct {
