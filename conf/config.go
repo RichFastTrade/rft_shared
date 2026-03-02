@@ -50,22 +50,6 @@ type Config struct {
 				Url string `yaml:"url"`
 			} `yaml:"spot"`
 		} `yaml:"binance"`
-		OKX struct {
-			Futures struct {
-				Url string `yaml:"url"`
-			} `yaml:"futures"`
-			Spot struct {
-				Url string `yaml:"url"`
-			} `yaml:"spot"`
-		} `yaml:"okx"`
-		BitGet struct {
-			Futures struct {
-				Url string `yaml:"url"`
-			} `yaml:"futures"`
-			Spot struct {
-				Url string `yaml:"url"`
-			} `yaml:"spot"`
-		} `yaml:"bitget"`
 	} `yaml:"exchange"`
 	Feishu struct {
 		AppId     string            `yaml:"appId"`
